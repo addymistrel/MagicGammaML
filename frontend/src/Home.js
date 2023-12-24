@@ -1,8 +1,16 @@
 import logo from "./logo.svg";
 import "./form.css";
+import axios from "axios";
 
 function Home() {
   const djangoUrl = "http://127.0.0.1:8000/";
+
+  const handlePredict = async () => {
+    const out = await axios
+      .post(djangoUrl + "predict/")
+      .then((res) => console.log(res.data))
+      .catch((err) => console.log(err));
+  };
   return (
     <>
       <div>
@@ -119,7 +127,9 @@ function Home() {
             <span class="label-text">fDist</span>
             <span class="nav-dot"></span>
           </label>
-          <button type="submit">Predict Now</button>
+          <button type="submit" onClick={handlePredict}>
+            Predict Now
+          </button>
           <p class="tip">Press Tab</p>
           <div class="signup-button">Make Prediction</div>
         </form>
