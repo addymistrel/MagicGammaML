@@ -205,6 +205,9 @@ label[for="input-10"] .nav-dot {
   margin-top: -25px;
 }
 
+label[for="input-11"] .nav-dot {
+    margin-top: 0px;
+  }
 * {
   margin: 0;
   padding: 0;
